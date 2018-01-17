@@ -74,6 +74,7 @@ echo $CLASSPATH
 echo "---- MODELS: ----"
 echo $STANFORD_MODELS
 
+echo "---- NLTK runtests.py: ----"
 #coverage
 coverage erase
 coverage run --source=nltk nltk/test/runtests.py --with-xunit
