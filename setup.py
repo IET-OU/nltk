@@ -29,7 +29,12 @@ from setuptools import setup, find_packages
 # manifest by scanning the version control system for its contents.
 #
 from setuptools.command import sdist
-del sdist.finders[:]
+# ou-specific: Add try .. except.
+try:
+    del sdist.finders[:]
+except AttributeError as err:
+    print("Ignoring ~ Attribute Error: {0}".format(err))
+    # print("Ignoring ~ Attribute Error: 'module' object has no attribute 'finders'")
 
 setup(
     name = "nltk",
